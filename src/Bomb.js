@@ -3,16 +3,23 @@
 import React, { Component } from 'react';
 
 class Bomb extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            currentSlideIndex: 0 
+            secondsLeft: this.props.initialCount
         }
 
     }
-    reder() {
-        return(
-        <div></div>)
+    render() {
+        if (this.state.secondsLeft > 0){
+            return( 
+            <h3>{this.state.secondsLeft} seconds left before I go boom!</h3>)
+        } else {
+            return(
+                <h3>Boom!</h3>
+                )
+        }
+        
     }
 
 }
